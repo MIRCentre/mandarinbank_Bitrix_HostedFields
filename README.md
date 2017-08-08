@@ -1,2 +1,9 @@
-# mandarinbank_Bitrix_HostedFields
-Payment-system for Bitrix CMS via Hosted Fields API(for MandarinBank)
+**protocol** - Протокол по которому пользователи заходят на ваш сайт(http или https)
+
+**domain** - Домен вашего сайта
+
+**port** - Порт вашего сайта, если ваш сайт находится на 80 порте, т.е. в адрессной строке после домена через двоеточие не указано число, то данный параметры указывать не прийдётся!
+
+**protocol://domain:port/** - Может быть как `https://example.com/` так и `https://example.com:80/`
+
+## Установка
