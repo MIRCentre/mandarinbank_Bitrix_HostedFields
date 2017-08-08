@@ -27,5 +27,5 @@
 
 11. Cохраняем
 12. В системе MandarinPay указываем
-- callbackURL **protocol://domain:port/payment/mandarinbank/st.php**
-- returnURL **protocol://domain:port/payment/mandarinbank/state.php**
+- callbackURL **protocol://domain:port/payment/mandarinbank_hosted/st.php**
+- returnURL **protocol://domain:port/payment/mandarinbank_hosted/state.php**
