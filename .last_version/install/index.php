@@ -5,14 +5,16 @@ use Bitrix\Main\ModuleManager;
 
 IncludeModuleLangFile(__FILE__);
 
-Class mandarinbank_pay extends CModule{
+Class mandarinbank_pay extends CModule
+{
 	const MODULE_ID = 'mandarinbank.pay';
-	var $MODULE_ID = self::MODULE_ID;
+	var $MODULE_ID = 'mandarinbank.pay';
 	var $MODULE_VERSION;
 	var $MODULE_VERSION_DATE;
 	var $MODULE_NAME;
 	var $MODULE_DESCRIPTION;
-	var $POSTFIX = '_hosted';
+
+	var $strError = '';
 
 	function __construct(){
 		include_once('version.php');
@@ -24,8 +26,8 @@ Class mandarinbank_pay extends CModule{
 
 		$this->PARTNER_NAME = 'vuchastyi';
 		$this->PARTNER_URI = 'https://'.'github.com/vuchastyi';
-		$this->MODULE_NAME = GetMessage('MANDARIN_MODULE_NAME');
-		$this->MODULE_DESCRIPTION = GetMessage('MANDARIN_MODULE_DESC');
+		$this->MODULE_NAME = GetMessage('MANDARIN_MODULE_NAME_HOSTED');
+		$this->MODULE_DESCRIPTION = GetMessage('MANDARIN_MODULE_DESC_HOSTED');
 	}
 
 	function InstallEvents(){return true;}
@@ -79,8 +81,8 @@ Class mandarinbank_pay extends CModule{
 	}
 
 	function UnInstallFiles() {
-		$this->rrmdir($_SERVER['DOCUMENT_ROOT'].'/bitrix/php_interface/include/sale_payment/mandarinbank'.$this->POSTFIX);
-		$this->rrmdir($_SERVER['DOCUMENT_ROOT'].'/payment/mandarinbank'.$this->POSTFIX);
+		$this->rrmdir($_SERVER['DOCUMENT_ROOT'].'/bitrix/php_interface/include/sale_payment/mandarinbank_hosted');
+		$this->rrmdir($_SERVER['DOCUMENT_ROOT'].'/payment/mandarinbank_hosted');
 		return true;
 	}
 

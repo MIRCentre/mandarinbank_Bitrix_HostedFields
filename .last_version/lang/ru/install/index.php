@@ -1,4 +1,4 @@
 <?php
-$MESS["MANDARIN_MODULE_NAME"] = "Платёжная система Мандарин";
-$MESS["MANDARIN_MODULE_DESC"] = "Платёжный модуль системы Мандарин для Bitrix CMS: \"Small business\".";
+$MESS["MANDARIN_MODULE_NAME_HOSTED"] = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
+$MESS["MANDARIN_MODULE_DESC_HOSTED"] = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ Bitrix CMS: \"Small business\".";
 ?>
