@@ -64,4 +64,4 @@ $json = json_decode($json_response);
 
 $config_pay['operationId'] = $json->jsOperationId;
 
-include(dirname(__FILE__).'/form.php');
+include(dirname(__FILE__) . '/tmpl/form.php');

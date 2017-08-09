@@ -9,8 +9,8 @@ Class mandarinbank_pay extends CModule
 {
     const MODULE_ID = 'mandarinbank.pay';
     var $MODULE_ID = 'mandarinbank.pay';
-    var $MODULE_VERSION;
-    var $MODULE_VERSION_DATE;
+    var $MODULE_VERSION = '1.0.4';
+    var $MODULE_VERSION_DATE = "2017-08-09";
     var $MODULE_NAME;
     var $MODULE_DESCRIPTION;
 
