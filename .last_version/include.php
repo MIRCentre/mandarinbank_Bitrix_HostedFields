@@ -1,3 +1,2 @@
 <?php
-// silence for make world better
-?>
+// silence... for make world better
