@@ -7,8 +7,8 @@ use \Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 
 $psTitle = Loc::getMessage("PAYSYS_MOD_TITLE");
-$psDescription = str_replace("#response_url#", "http://" . $_SERVER['SERVER_NAME'] . "/payment/mandarinbank/st.php", Loc::getMessage("MANDARIN_DESCR"));
-$psDescription = str_replace("#suc_url#", "http://" . $_SERVER['SERVER_NAME'] . "/payment/mandarinbank/state.php", $psDescription);
+$psDescription = str_replace("#response_url#", "http://" . $_SERVER['SERVER_NAME'] . "/payment/mandarinbank_pay/st.php", Loc::getMessage("MANDARIN_DESCR"));
+$psDescription = str_replace("#suc_url#", "http://" . $_SERVER['SERVER_NAME'] . "/payment/mandarinbank_pay/state.php", $psDescription);
 
 $psTypeDescr = Loc::getMessage("MANDARIN_DESCR");
 

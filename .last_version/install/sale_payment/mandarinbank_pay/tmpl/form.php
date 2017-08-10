@@ -56,9 +56,7 @@
         CVV:
         <div class="mandarinpay-field-card-cvv hosted-field"><div class="glyphicon glyphicon-check"></div></div>
         <br/>
-        <a href="#" onclick="return mandarinpay.hosted.process(this);" class="btn btn-default">
-            Pay (options)
-        </a>
+        <a href="#" onclick="return mandarinpay.hosted.process(this);" class="btn btn-default">Оплатить</a>
     </div>
 </form>
 
@@ -68,10 +66,10 @@
 mandarinpay.hosted.setup("#form-hosted-pay",{
   operationId: '<?=$config_pay['operationId']?>',
   onsuccess: function(data) {
-    window.location.href = '/payment/mandarinbank_hosted/state.php?status=success';
+    window.location.href = '/payment/mandarinbank_pay/state.php?status=success';
   },
   onerror: function(data) {
-    window.location.href = '/payment/mandarinbank_hosted/state.php?status=failed';
+    window.location.href = '/payment/mandarinbank_pay/state.php?status=failed';
   }
 });
 

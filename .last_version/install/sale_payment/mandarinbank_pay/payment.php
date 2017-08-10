@@ -39,7 +39,7 @@ $content = array(
     'email'=>CSalePaySystemAction::GetParamValue("email_client")
   ),
   'urls'=>array(
-    'callback'=> siteURL() .'payment/mandarinbank_hosted/st.php'
+    'callback'=> siteURL() .'payment/mandarinbank_pay/st.php'
   )
 );
 $content = json_encode($content);

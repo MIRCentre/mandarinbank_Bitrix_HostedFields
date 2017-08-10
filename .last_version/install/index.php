@@ -7,31 +7,37 @@ IncludeModuleLangFile(__FILE__);
 
 Class mandarinbank_pay extends CModule
 {
-    const MODULE_ID = 'mandarinbank.pay';
     var $MODULE_ID = 'mandarinbank.pay';
-    var $MODULE_VERSION = '1.0.4';
-    var $MODULE_VERSION_DATE = "2017-08-09";
+    var $MODULE_VERSION;
+    var $MODULE_VERSION_DATE;
     var $MODULE_NAME;
     var $MODULE_DESCRIPTION;
+    var $PARTNER_NAME;
+    var $PARTNER_URI;
 
     var $strError = '';
 
     function __construct(){
-        include_once('version.php');
+        $this->PARTNER_NAME = 'vuchastyi';
+        $this->PARTNER_URI = 'https://github.com/vuchastyi';
+
+        include(dirname(__FILE__) . "/version.php");
 
         if(is_array($arModuleVersion) && array_key_exists('VERSION',$arModuleVersion)){
             $this->MODULE_VERSION = $arModuleVersion['VERSION'];
             $this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
         }
 
-        $this->PARTNER_NAME = 'vuchastyi';
-        $this->PARTNER_URI = 'https://'.'github.com/vuchastyi';
         $this->MODULE_NAME = GetMessage('MANDARIN_MODULE_NAME_HOSTED');
         $this->MODULE_DESCRIPTION = GetMessage('MANDARIN_MODULE_DESC_HOSTED');
     }
 
-    function InstallEvents(){return true;}
-    function UnInstallEvents(){return true;}
+    function InstallEvents(){
+        return true;
+    }
+    function UnInstallEvents(){
+        return true;
+    }
 
     function rmFolder($dir){
         if(is_dir($dir)){
@@ -73,7 +79,7 @@ Class mandarinbank_pay extends CModule
             mkdir($dir_pay,0755);
         }
 
-        if(is_dir($source = $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/'.self::MODULE_ID.'/install')) {
+        if(is_dir($source = $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/'.$this->MODULE_ID.'/install')) {
             $this->copyDir("$source/sale_payment", $dir_spm);
             $this->copyDir("$source/payment", $dir_pay);
         }
@@ -81,16 +87,16 @@ Class mandarinbank_pay extends CModule
     }
 
     function UnInstallFiles() {
-        $this->rmFolder($_SERVER['DOCUMENT_ROOT'].'/bitrix/php_interface/include/sale_payment/mandarinbank_hosted');
-        $this->rmFolder($_SERVER['DOCUMENT_ROOT'].'/payment/mandarinbank_hosted');
+        $this->rmFolder($_SERVER['DOCUMENT_ROOT'].'/bitrix/php_interface/include/sale_payment/mandarinbank_pay');
+        $this->rmFolder($_SERVER['DOCUMENT_ROOT'].'/payment/mandarinbank_pay');
         return true;
     }
     function DoInstall() {
         $this->InstallFiles();
-        ModuleManager::registerModule(self::MODULE_ID);
+        ModuleManager::registerModule($this->MODULE_ID);
     }
     function DoUninstall() {
-        ModuleManager::unRegisterModule(self::MODULE_ID);
+        ModuleManager::unRegisterModule($this->MODULE_ID);
         $this->UnInstallFiles();
     }
 }
