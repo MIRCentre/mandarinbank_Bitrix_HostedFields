@@ -6,7 +6,7 @@
 
 **protocol://domain:port/** - Может быть как `https://example.com/` так и `https://example.com:80/`
 
-##Установка
+## Установка
 
 1. На сервере в каталоге **/bitrix/modules/** создаём каталог **mandarinbank.pay**
 2. Распаковываем папку репозитория **.last_version**, копируем две папки (**install** и **lang**) на сервер в каталог **/bitrix/modules/mandarinbank.pay/**
