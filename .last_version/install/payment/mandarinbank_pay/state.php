@@ -9,7 +9,7 @@ if(isset($_GET['status'])){
         echo "Ваш заказ успешно оплачен с помощью платежной системы <a href=\"http://mandarinbank.com\" target=\"_blank\">Мандарин Банк</a>";
 
     } else {
-        echo "Произошла ошибка оплаты заказа с помощью платежной системы <a href=\"http://mandarinbank.com\" target=\"_blank\">Мандарин Банк</a><br>! Попробуйте еще раз.";
+        echo "Произошла ошибка оплаты заказа с помощью платежной системы <a href=\"http://mandarinbank.com\" target=\"_blank\">Мандарин Банк</a>! Попробуйте еще раз.";
     }
 }
 
